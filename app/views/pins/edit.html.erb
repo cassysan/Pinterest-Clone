@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to "Cancel", pin_path %>
-<%= link_to "Delete Pin", pins_path, method: :destroy %>
+<%= link_to "Delete Pin", pin_path, method: :delete, data: { confirm: "Are you sure you wish to delete this pin?"} %>
