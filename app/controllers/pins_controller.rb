@@ -1,5 +1,7 @@
 class PinsController < ApplicationController
+  before_action :find_pin, only: [:show, :edit, :update, :destroy]
   def index
+    @pins = Pin.all
   end
 
   def show
@@ -19,11 +21,22 @@ class PinsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
 
   private
 
   def pin_params
-    params.require.permit(:title, :description)
+    params.require(@pin).permit(:title, :description)
   end
 
+  def find_pin
+    @pin = Pin.find(params[:id])
+  end
 end

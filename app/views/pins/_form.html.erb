@@ -1,13 +1,9 @@
-<%= simple_form_for @pin do |f| %>
-  <% if @pin.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this pin from being saved:</h2>
-      <ul>
-      <% @pin.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+<%= simple_form_for(@pin) do |f| %>
+  <% flash.each do |key, msg| %>
+    <%= content_tag :div, msg, :id => key %>
+  <% end %>
   <%= f.input :title, input_html: { class: 'form-control'} %>
-  <%= f.description :description, input_html: { class: 'form-control'} %>
-  <%= f.button "Add Pin", class: "btn btn-primary" %>
+  <%= f.input :description, input_html: { class: 'form-control'} %>
+  <%= f.submit "Add Pin", class: "btn btn-primary" %>
 <% end %>
-<% end %>
+
