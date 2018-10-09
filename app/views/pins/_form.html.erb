@@ -1,5 +1,3 @@
-<h1>New Pin</h1>
-
 <%= simple_form_for @pin do |f| %>
   <% if @pin.errors.any? %>
     <div id="error_explanation">
@@ -8,7 +6,8 @@
       <% @pin.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-  <%= f.input :title, input_html { class: 'form-control'} %>
-  <%= f.description :description, input_html { class: 'form-control'} %>
+  <%= f.input :title, input_html: { class: 'form-control'} %>
+  <%= f.description :description, input_html: { class: 'form-control'} %>
   <%= f.button "Add Pin", class: "btn btn-primary" %>
-<%= end %>
+<% end %>
+<% end %>
