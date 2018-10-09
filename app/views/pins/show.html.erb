@@ -3,6 +3,7 @@
 
   <h2><%= @pin.title %></h2>
   <p><%= @pin.description %></p>
-
+<br>
+<p>Submitted by <%= @pin.user.email %></p>
 <%= link_to "Edit Pin", edit_pin_path %>
 <%= link_to "Back to Home", root_path %>
