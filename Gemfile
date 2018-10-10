@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
+gem 'carrierwave', '~> 1.0'
 
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'simple_form'
