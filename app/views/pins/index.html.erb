@@ -4,5 +4,8 @@
 <% end %>
 <% @pins.each do |pin| %>
 <h2>
-<%= link_to pin.title, pin %></h2>
+<%= link_to do %></h2>
+<%= pin.title %>
+  <%= image_tag(pin.photo.to_s, alt: 'Image', height: "300") if pin.photo? %>
+<% end %>
 <% end %>
