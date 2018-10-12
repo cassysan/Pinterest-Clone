@@ -3,9 +3,8 @@
 <%= link_to "New Pin", new_pin_path %>
 <% end %>
 <% @pins.each do |pin| %>
-<h2>
-<%= link_to pin_path(pin) do %></h2>
-  <%= pin.title %>
+  <%= link_to pin_path(pin) do %>
+  <h2><%= pin.title %></h2>
   <%= image_tag(pin.photo.to_s, alt: 'Image', height: "300") if pin.photo? %>
 <% end %>
 <% end %>

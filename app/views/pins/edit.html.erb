@@ -1,6 +1,6 @@
 <div class="col-md-6 col-md-offet-3">
   <h1>Edit Pin</h1>
-
+<%= image_tag(@pin.photo.to_s, alt: 'Image', height: "300") if @pin.photo? %>
 <%= render 'form' %>
 
 <%= link_to "Cancel", pin_path %>
