@@ -2,9 +2,17 @@
 <% if user_signed_in? %>
 <%= link_to "New Pin", new_pin_path %>
 <% end %>
-<% @pins.each do |pin| %>
-  <%= link_to pin_path(pin) do %>
-  <h2><%= pin.title %></h2>
-  <%= image_tag(pin.photo.to_s, alt: 'Image', height: "300") if pin.photo? %>
-<% end %>
-<% end %>
+<div class="container">
+  <div class="row">
+      <% @pins.each do |pin| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= link_to pin_path(pin) do %>
+          <h2><%= pin.title %></h2>
+          <%= image_tag(pin.photo.to_s, alt: 'Image', height: "300") if pin.photo? %>
+        <% end %>
+    </div>
+      <% end %>
+  </div>
+</div>
+
+
