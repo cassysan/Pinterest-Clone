@@ -11,8 +11,6 @@
             <%= image_tag(pin.photo.to_s, alt: 'Image') if pin.photo? %>
             <div class="panel-body">
             <h2><%= pin.title %></h2>
-            <% if user_signed_in %>
-            <% end %>
             </div>
           <% end %>
       </div>
