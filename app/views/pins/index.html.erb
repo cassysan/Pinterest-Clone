@@ -8,10 +8,10 @@
         <% @pins.each do |pin| %>
         <div class="box panel panel-default col-xs-12 col-sm-4">
           <%= link_to pin_path(pin) do %>
+            <%= image_tag(pin.photo.to_s, alt: 'Image') if pin.photo? %>
             <div class="panel-body">
             <h2><%= pin.title %></h2>
             </div>
-            <%= image_tag(pin.photo.to_s, alt: 'Image', height: "300") if pin.photo? %>
           <% end %>
       </div>
         <% end %>

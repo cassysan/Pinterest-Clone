@@ -1,9 +1,18 @@
-<h1>This is my Pin Page</h1>
-
-<%= image_tag(@pin.photo.to_s, alt: 'Image', height: "600") if @pin.photo? %>
-  <h2><%= @pin.title %></h2>
-  <p><%= @pin.description %></p>
-<br>
-<p>Submitted by <%= @pin.user.email %></p>
-<%= link_to "Edit Pin", edit_pin_path %>
-<%= link_to "Back to Home", root_path %>
+<div id="pin-show" class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+  <%= image_tag(@pin.photo.to_s, alt: 'Image', height: "600") if @pin.photo? %>
+    </div>
+    <div class="panel-body">
+    <h1><%= @pin.title %></h1>
+    <p><%= @pin.description %></p>
+    </div>
+    <div class="panel-footer">
+  <p>Submitted by <%= @pin.user.email %></p>
+    </div>
+    <br>
+  <%= link_to "Edit Pin", edit_pin_path %>
+  <%= link_to "Delete Pin", pin_path, method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to "Back to Home", root_path %>
+  </div>
+</div>
