@@ -7,6 +7,8 @@ class PinsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = Comment.all.find_by(pin_id: @pin)
   end
 
   def new
