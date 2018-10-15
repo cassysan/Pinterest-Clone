@@ -1,7 +1,4 @@
 <div id="pins" class="transition-enabled">
-  <% if user_signed_in? %>
-  <%= link_to "New Pin", new_pin_path %>
-  <% end %>
   <div class="container">
     <div class="row">
         <% @pins.each do |pin| %>
