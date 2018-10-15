@@ -10,7 +10,13 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment =
+    @comment = Comment.new(comment_params)
+
+    if @comment.save
+      redirect_to pin_path(@pin)
+    else
+      render 'new'
+    end
   end
 
   def update
@@ -26,5 +32,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
+    params.require(:comment).permit(:description)
   end
 end

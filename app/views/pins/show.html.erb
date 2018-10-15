@@ -29,11 +29,8 @@
             </div>
             <br>
             <br>
-            <h4>Add A New Comment</h4>
-            <%= render './comments/form' %>
-            <% unless @comments.nil? %>
+            <%= link_to "Add A New Comment", new_pin_comment_path(@pin), class: "btn btn-primary" %>
               <p> <%= @comments.description %> - <%= @comments.user.email %></p>
-            <% end %>
           </div>
         </div>
       </div>
