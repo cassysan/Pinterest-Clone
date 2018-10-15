@@ -1,33 +1,37 @@
 <div id="pin-show" class="row">
-  <div class="col-md-8 col-md-offset-2">
-    <div class="panel panel-default">
-  <%= image_tag(@pin.photo.to_s, alt: 'Image', height: "600") if @pin.photo? %>
-    </div>
-    <div class="panel-body">
-    <h1><%= @pin.title %></h1>
-    <p><%= @pin.description %></p>
-    </div>
-    <div class="panel-footer">
-      <div class="row">
-        <div class="col-md-6">
-          <% if user_signed_in? %>
-        <p>Submitted by <%= @pin.user.email %></p>
-          <% end %>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="pin_image">
+        <%= image_tag(@pin.photo.to_s, alt: 'Image', width: '100%') if @pin.photo? %>
         </div>
-        <div class="col-md-6-">
-          <div class="btn-group pull-right">
-          <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do %>
-          <span class="glyphicon glyphicon-heart">
-            <%= @pin.get_upvotes.size %>
-          </span>
-          <% end %>
-          <%= link_to "Edit Pin", edit_pin_path %>
-          <%= link_to "Delete Pin", pin_path, method: :delete, data: { confirm: "Are you sure?" } %>
-          <%= link_to "Back to Home", root_path %>
+      <div class="panel-body">
+        <h1><%= @pin.title %></h1>
+        <p><%= @pin.description %></p>
+      </div>
+      <div class="panel-footer">
+        <div class="row">
+          <div class="col-md-6">
+            <% if user_signed_in? %>
+              <p>Submitted by <%= @pin.user.email %></p>
+            <% end %>
+          </div>
+          <div class="col-md-6-">
+            <div class="btn-group pull-right">
+              <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do %>
+            <span class="glyphicon glyphicon-heart">
+              <%= @pin.get_upvotes.size %>
+            </span>
+            <% end %>
+            <%= link_to "Edit Pin", edit_pin_path %>
+            <%= link_to "Delete Pin", pin_path, method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= link_to "Back to Home", root_path %>
+            </div>
           </div>
         </div>
       </div>
+      </div>
+      <br>
     </div>
-    <br>
   </div>
 </div>
