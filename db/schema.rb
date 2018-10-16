@@ -12,8 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2018_10_16_033956) do
 
-# Could not dump table "comments" because of following StandardError
-#   Unknown type 'association' for column 'pin'
+  create_table "comments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "pin_id"
+    t.text "description"
+    t.index ["pin_id"], name: "index_comments_on_pin_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "pins", force: :cascade do |t|
     t.string "title"

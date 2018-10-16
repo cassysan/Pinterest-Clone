@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_pin
+  before_action :set_pin, :set_comment
 
   def index
     @comments = Comment.all
@@ -20,7 +20,14 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
+    if @comment.save
+      redirect_to pin_path(@pin)
+    else
+      render 'edit'
   end
 
   def destroy
@@ -30,6 +37,10 @@ class CommentsController < ApplicationController
 
   def set_pin
     @pin = Pin.find(params[:pin_id])
+  end
+
+  def set_comment
+    @comment = Comment.find(params[:id])
   end
 
   def comment_params
