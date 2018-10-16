@@ -30,7 +30,11 @@
             <br>
             <br>
             <%= link_to "Add A New Comment", new_pin_comment_path(@pin), class: "btn btn-primary" %>
-              <p> <%= @comments.description %> - <%= @comments.user.email %></p>
+            <% unless @comments.nil? %>
+              <% @comments.each do |comment| %>
+              <p> <%= comment.description %> - <%= comment.user.email %></p>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>

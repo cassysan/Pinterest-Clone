@@ -7,7 +7,7 @@ class PinsController < ApplicationController
   end
 
   def show
-    @comments = Comment.find_by(pin_id: @pin)
+    @comments = Comment.where(pin_id: @pin)
   end
 
   def new

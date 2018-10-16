@@ -11,7 +11,8 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-
+    @comment.pin = @pin
+    @comment.user = current_user
     if @comment.save
       redirect_to pin_path(@pin)
     else
@@ -28,10 +29,10 @@ class CommentsController < ApplicationController
   private
 
   def set_pin
-    @pin = Pin.find_by(params[:id])
+    @pin = Pin.find(params[:pin_id])
   end
 
   def comment_params
-    params.require(:comment).permit(:description)
+    params.require(:comment).permit(:description, :pin_id)
   end
 end
