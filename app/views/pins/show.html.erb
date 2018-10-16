@@ -29,12 +29,16 @@
             </div>
             <br>
             <br>
-            <%= link_to "Add A New Comment", new_pin_comment_path(@pin), class: "btn btn-primary" %>
-            <% unless @comments.nil? %>
-              <% @comments.each do |comment| %>
-              <p> <%= comment.description %> - <%= comment.user.email %></p>
+            <div class="text-center">
+              <%= link_to "Add A New Comment", new_pin_comment_path(@pin), class: "btn btn-primary" %>
+            </div>
+            <div class="container">
+              <% unless @comments.nil? %>
+                <% @comments.each do |comment| %>
+                <p> <%= comment.description %> - <em><%= comment.user.email %> </em> </p>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
         </div>
       </div>

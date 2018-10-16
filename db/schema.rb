@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_15_033859) do
+ActiveRecord::Schema.define(version: 2018_10_16_033956) do
 
 # Could not dump table "comments" because of following StandardError
 #   Unknown type 'association' for column 'pin'
@@ -33,8 +33,10 @@ ActiveRecord::Schema.define(version: 2018_10_15_033859) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   create_table "votes", force: :cascade do |t|
