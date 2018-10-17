@@ -1,13 +1,39 @@
-<div id="modal-comment" class="col-md-6 col-md-offset-3 modal ">
-  <div class="row"><div class="panel panel-default">
-    <div class="panel-heading">
-      <span class="text-right close">&times;</span>
-      <h1>New Comment</h1>
-      <%= image_tag(@pin.photo.to_s, alt: 'Image', width: '100%') if @pin.photo? %>
-    </div>
-    <div class="panel-body">
-      <%= render 'form' %>
-    </div>
-  </div></div>
-</div>
 
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+
+
+        <div id="modal-comment" class="col-md-6 col-md-offset-3 modal ">
+          <div class="row"><div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="text-right close">&times;</span>
+              <h1>New Comment</h1>
+              <%= image_tag(@pin.photo.to_s, alt: 'Image', width: '100%') if @pin.photo? %>
+            </div>
+            <div class="panel-body">
+              <%= render 'form' %>
+            </div>
+          </div></div>
+        </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
