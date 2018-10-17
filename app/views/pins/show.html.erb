@@ -30,7 +30,7 @@
             <br>
             <br>
             <div class="text-center">
-              <%= link_to "Add A New Comment", new_pin_comment_path(@pin), class: "btn btn-primary" %>
+              <%= link_to "Add A New Comment", new_pin_comment_path(@pin), id: "modal-btn", class: "btn btn-primary" data-toggle="modal" data-target="#exampleModal" %>
             </div>
 
               <% unless @comments.nil? %>

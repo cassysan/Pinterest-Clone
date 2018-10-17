@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :set_pin, :set_comment
+  before_action :set_pin
+  before_action :set_comment, only: [:edit, :update, :destroy]
 
   def index
     @comments = Comment.all
@@ -28,6 +29,7 @@ class CommentsController < ApplicationController
       redirect_to pin_path(@pin)
     else
       render 'edit'
+    end
   end
 
   def destroy
