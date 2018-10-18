@@ -29,7 +29,10 @@
 console.log("you are here");
 window.onload = function(){
   document.getElementById("button-modal").onclick = function() { toggleModal()};
-  function toggleModal() {
-    document.getElementById("form-modal").classList.toggle("show");
-  }
+
 };
+  function toggleModal() {
+    const modal = document.getElementById("exampleModal");
+    modal.classList.toggle("modal-show");
+    modal.classList.remove("modal", "fade")
+  }
