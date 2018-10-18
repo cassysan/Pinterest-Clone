@@ -21,6 +21,15 @@
 //= require_tree .
 
 
-$('#exampleModal').on('shown.bs.modal', function () {
-  $('#exampleModalCenter').trigger('focus')
-})
+
+
+// $('#exampleModal').on('shown.bs.modal', function () {
+//   $('#myInput').trigger('focus')
+// })
+console.log("you are here");
+window.onload = function(){
+  document.getElementById("button-modal").onclick = function() { toggleModal()};
+  function toggleModal() {
+    document.getElementById("form-modal").classList.toggle("show");
+  }
+};
