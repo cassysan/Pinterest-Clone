@@ -29,10 +29,24 @@
 console.log("you are here");
 window.onload = function(){
   document.getElementById("button-modal").onclick = function() { toggleModal()};
+  document.getElementById("modal-close").onclick = function() { toggleCloseButton()};
+  document.getElementById("add-comment").onclick = function(event) { saveComment()};
 
 };
   function toggleModal() {
     const modal = document.getElementById("exampleModal");
     modal.classList.toggle("modal-show");
     modal.classList.remove("modal", "fade")
+  };
+
+  function toggleCloseButton() {
+    const modal = document.getElementById("exampleModal");
+    modal.classList.add("modal", "fade")
+  };
+
+  function saveComment(){
+    event.preventDefault();
+    comment = document.getElementById("comment_description")
+    console.log(comment.innerHTML.text)
+
   }

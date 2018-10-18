@@ -1,6 +1,6 @@
 <%= simple_form_for [@pin, @comment] do |f| %>
   <%= f.input :description, input_html: { class: 'form-control'} %>
-  <%= f.submit "Add Comment", class: "btn btn-primary" %>
+  <%= f.submit "Add Comment", class: "btn btn-primary", id: "add-comment" %>
 <% end %>
 
 
