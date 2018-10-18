@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     @comment.pin = @pin
     @comment.user = current_user
     if @comment.save
-      redirect_to pin_path(@pin)
+      redirect_to @pin, notice: "Successfully created added new comment"
     else
       render 'new'
     end
