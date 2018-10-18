@@ -47,6 +47,6 @@ window.onload = function(){
   function saveComment(){
     event.preventDefault();
     comment = document.getElementById("comment_description")
-    console.log(comment.innerHTML.text)
+    console.log(comment.value)
 
   }
